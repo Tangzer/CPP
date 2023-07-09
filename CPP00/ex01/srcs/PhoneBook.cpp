@@ -79,6 +79,6 @@ void	PhoneBook::displayContacts() {
 		}
 		i++;
 	}
-	//this->searchContactById();
+	searchContactById();
 	return ;
 }
