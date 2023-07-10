@@ -3,7 +3,7 @@
 ################################################################################
 
 
-NAME	= Unnecessary violence
+NAME	= Unnecessary_violence
 CC 		= g++
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 DFLAGS	= -MMD -MF $(@:.o=.d)
@@ -22,7 +22,9 @@ SRCS_PATH		= ./srcs
 
 INCLUDE_PATH	= ./includes
 
-SRCS			= 
+SRCS			= HumanA.cpp\
+					HumanB.cpp\
+					Weapon.cpp
 
 MAIN			=	main.cpp
 
