@@ -3,12 +3,12 @@
 ################################################################################
 
 
-NAME	= Towards_a_more_useful_fixed-point_number_class
+NAME	= Now_we_are_talking
 CC 		= g++
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 DFLAGS	= -MMD -MF $(@:.o=.d)
 AUTHOR	= tverdood
-DATE	= 10/07/2023
+DATE	= 11/07/2023
 
 NOVISU 	= 1 # 1 = no progress bar usefull when tty is not available
 
