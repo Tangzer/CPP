@@ -1,0 +1,63 @@
+#include "ScavTrap.hpp"
+
+ScavTrap::ScavTrap()
+{
+	this->_name = "Unnamed";
+	this->_hitPoints = 10;
+	this->_energyPoints = 10;
+	this->_attackDamage = 0;
+	std::cout << "Default ScavTrap constructed!" << std::endl;
+}
+
+ScavTrap::ScavTrap(std::string name)
+{
+	this->_hitPoints = 10;
+	this->_energyPoints = 10;
+	this->_attackDamage = 0;
+	this->_name = name;
+	std::cout << _name <<" ScavTrap constructor called" << std::endl;
+}
+
+ScavTrap::ScavTrap(const ScavTrap& copy) {
+	*this = copy;
+	std::cout << "Copy ScavTrap " << _name << " constructed" << std::endl;
+}
+
+ScavTrap& ScavTrap::operator=(const ScavTrap& other)
+{
+	if (this != &other)
+		ClapTrap::operator=(other);
+	std::cout << "ScavTrap " << _name << " assigned" << std::endl;
+	return (*this);
+}
+
+ScavTrap::~ScavTrap() {
+	std::cout << "ScavTrap " << _name << " destructed" << std::endl;
+}
+
+void ScavTrap::guardGate() {
+	if (this->_hitPoints <= 0)
+		std::cout << "(ScavTrap) " << this->_name << " is already dead. Leave it alone!" << std::endl << std::endl;
+	else if (this->_energyPoints <= 0)
+	{
+		std::cout << "(ScavTrap) " << this->_name << " cannot attack" << std::endl;
+		std::cout << "Energy points left: " << this->_energyPoints << std::endl << std::endl;
+	}
+	else
+	{
+		if (this->_guardMode)
+		{
+			this->_guardMode = false;
+			std::cout << this->_name << ": Guard mode turned OFF" << std::endl;
+		}
+		else
+		{
+			this->_guardMode = true;
+			std::cout << this->_name << ": Guard mode turned ON" << std::endl;
+		}
+	}
+}
+
+void ScavTrap::attack(const std::string &target) {
+	std::cout << "ScavTrap " << _name << " attacks " << target << " and causes " << _attackDamage << " attack damage" << std::endl;
+}
