@@ -49,15 +49,15 @@ ClapTrap::~ClapTrap() {
 void ClapTrap::attack(const std::string &target) {
 	if (this->_hitPoints > 0 and this->_energyPoints > 0)
 	{
-		std::cout << "(ScavTrap) " << this->_name << " attacks " << target << std::endl;
+		std::cout << "ScavTrap " << this->_name << " attacks " << target << std::endl;
 		std::cout << target << " loses " << this->_attackDamage << " hit points" << std::endl;
 		ClapTrap::useEnergyPoint(this->_energyPoints);
 	}
 	else if (this->_hitPoints <= 0)
-		std::cout << "(ScavTrap) " << this->_name << " is already dead. Leave it alone!" << std::endl << std::endl;
+		std::cout << "ScavTrap " << this->_name << " is already dead. Leave it alone!" << std::endl << std::endl;
 	else
 	{
-		std::cout << "(ScavTrap) " << this->_name << " cannot attack" << std::endl;
+		std::cout << "ScavTrap " << this->_name << " cannot attack" << std::endl;
 		std::cout << "Energy points left: " << this->_energyPoints << std::endl << std::endl;
 	}
 }
