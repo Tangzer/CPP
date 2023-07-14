@@ -1,7 +1,6 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap()
-{
+ScavTrap::ScavTrap() {
 	this->_name = "Unnamed";
 	this->_hitPoints = 10;
 	this->_energyPoints = 10;
@@ -9,8 +8,7 @@ ScavTrap::ScavTrap()
 	std::cout << "Default ScavTrap constructed!" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name)
-{
+ScavTrap::ScavTrap(std::string name) {
 	this->_hitPoints = 10;
 	this->_energyPoints = 10;
 	this->_attackDamage = 0;

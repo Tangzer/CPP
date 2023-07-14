@@ -1,18 +1,26 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name) {
+ClapTrap::ClapTrap() {
+	this->_name = "Unnamed";
     this->_hitPoints = 10;
 	this->_energyPoints = 10;
 	this->_attackDamage = 0;
+	std::cout << " Default ClapTrap constructed!" << std::endl;
+}
+
+ClapTrap::ClapTrap(std::string name) {
 	this->_name = name;
-	std::cout << "Default ClapTrap " << _name << " constructed!" << std::endl;
+    this->_hitPoints = 10;
+	this->_energyPoints = 10;
+	this->_attackDamage = 0;
+	std::cout << _name << " ClapTrap " << " constructed!" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other) {
-    this->_hitPoints = other._hitPoints;
+    this->_name = other._name;
+	this->_hitPoints = other._hitPoints;
 	this->_energyPoints = other._energyPoints;
 	this->_attackDamage = other._attackDamage;
-	this->_name = other._name;
 	std::cout << "Copy ClapTrap " << _name << " constructed!" << std::endl;
 }
 

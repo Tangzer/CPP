@@ -12,9 +12,11 @@ private:
 public:
 	Fixed();
 	Fixed(const Fixed& other);
-    Fixed(const int intNumber);
-    Fixed(const float floatNumber);
     Fixed& operator=(const Fixed & other);
+	~Fixed();
+
+	Fixed(const int intNumber);
+    Fixed(const float floatNumber);
 
     bool operator<(const Fixed &rhs) const;
 	bool operator>(const Fixed &rhs) const;
@@ -37,8 +39,6 @@ public:
 	static const Fixed	min(Fixed const & a, Fixed const & b);
 	static Fixed		max(Fixed& a, Fixed& b);
 	static const Fixed	max(Fixed const & a, Fixed const & b);
-
-    ~Fixed();
 
 	int			getRawBits(void) const;
 	void		setRawBits(int const raw);

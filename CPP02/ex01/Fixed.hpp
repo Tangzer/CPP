@@ -10,9 +10,9 @@ private:
 
 public:
 	Fixed();
-    ~Fixed();
-	Fixed(const Fixed& other);                 //Copy constructor
-	Fixed& operator=(const Fixed & other);    //Overload ssignment operator. It is used to assign the value of one object to another
+	Fixed(const Fixed& other);
+	Fixed& operator=(const Fixed & other);
+	~Fixed();
 
     Fixed(const int intNumber);
     Fixed(const float floatNumber);
