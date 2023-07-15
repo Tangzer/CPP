@@ -1,16 +1,15 @@
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
+#include "DiamondTrap.hpp"
 
-int main(void)
-{
-{
+int main(void) {
+	{
 		std::cout << "--------------" << std::endl;
 		std::cout << "--- ATTACK ---" << std::endl;
 		std::cout << "--------------" << std::endl << std::endl;
 
-		ScavTrap trap("Trappy");
-		ScavTrap copy;
+		DiamondTrap trap("Trappy");
+		DiamondTrap copy;
 
+		std::cout << std::endl;
 		for (int i = 0; i < 3; i++)
 			trap.attack("Jeff");
 
@@ -19,12 +18,11 @@ int main(void)
 			copy.attack("Alfred");
 	}
 	{
-		std::cout << std::endl;
 		std::cout << "-------------------" << std::endl;
 		std::cout << "--- TAKE DAMAGE ---" << std::endl;
 		std::cout << "-------------------" << std::endl;
 
-		ScavTrap trap;
+		DiamondTrap trap;
 
 		for (int i = 0; i <= 4; i++)
 		{
@@ -33,12 +31,11 @@ int main(void)
 		}
 	}
 	{
-		std::cout << std::endl;
 		std::cout << "--------------" << std::endl;
 		std::cout << "--- REPAIR ---" << std::endl;
 		std::cout << "--------------" << std::endl;
 
-		ScavTrap trap("HealBot");
+		DiamondTrap trap("HealBot");
 
 		for (int i = 0; i <= 4; i++)
 		{
@@ -47,16 +44,12 @@ int main(void)
 		}
 	}
 	{
-		std::cout << std::endl;
 		std::cout << "------------------" << std::endl;
-		std::cout << "--- GUARD GATE ---" << std::endl;
-		std::cout << "------------------" << std::endl;
+		std::cout << "--- Who am I ? ---" << std::endl;
+		std::cout << "-------------------" << std::endl;
 
-		ScavTrap trap("Jeff");
-		for (int i = 0; i < 5; i++)
-			trap.guardGate();
-		trap.takeDamage(200);
-		trap.guardGate();
+		DiamondTrap trap("Jeff");
+		trap.whoAmI();
 	}
 	return (0);
 }

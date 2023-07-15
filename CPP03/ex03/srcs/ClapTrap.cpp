@@ -1,21 +1,19 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap()
-{
+ClapTrap::ClapTrap() {
 	this->_name = "Unnamed";
 	this->_hitPoints = 10;
 	this->_energyPoints = 10;
 	this->_attackDamage = 0;
-	std::cout << "Default ClapTrap constructed!" << std::endl;
+	std::cout << "*Default ClapTrap constructed!*" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name)
-{
+ClapTrap::ClapTrap(std::string name) {
+	std::cout << _name <<" ClapTrap constructor called" << std::endl;
 	this->_hitPoints = 10;
 	this->_energyPoints = 10;
 	this->_attackDamage = 0;
 	this->_name = name;
-	std::cout << _name <<" ClapTrap constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other) {
@@ -39,7 +37,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other) {
 }
 
 ClapTrap::~ClapTrap() {
-	std::cout << "ClapTrap " << _name << " destructed" << std::endl;
+	std::cout << "*ClapTrap " << _name << " destructed*" << std::endl;
 }
 
 /****************************/

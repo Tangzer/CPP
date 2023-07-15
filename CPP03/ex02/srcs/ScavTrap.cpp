@@ -5,7 +5,7 @@ ScavTrap::ScavTrap() {
 	this->_hitPoints = 10;
 	this->_energyPoints = 10;
 	this->_attackDamage = 0;
-	std::cout << "Default ScavTrap constructed!" << std::endl;
+	std::cout << "*Default ScavTrap constructed!*" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) {
@@ -30,7 +30,7 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& other)
 }
 
 ScavTrap::~ScavTrap() {
-	std::cout << "ScavTrap " << _name << " destructed" << std::endl;
+	std::cout << "*ScavTrap " << _name << " destructed*" << std::endl;
 }
 
 /****************************/
