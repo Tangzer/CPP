@@ -5,17 +5,15 @@ ScavTrap::ScavTrap() {
 	this->_hitPoints = 10;
 	this->_energyPoints = 10;
 	this->_attackDamage = 0;
-	this->_guardMode = false;
-	std::cout << "Default ScavTrap constructed!" << std::endl;
+	std::cout << "*Default ScavTrap constructed!*" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name)
-{
-	this->_name = name;
+ScavTrap::ScavTrap(std::string name) {
+	std::cout << _name <<" ScavTrap constructor called" << std::endl;
 	this->_hitPoints = 10;
 	this->_energyPoints = 10;
 	this->_attackDamage = 0;
-	std::cout << _name <<" ScavTrap constructor called" << std::endl;
+	this->_name = name;
 }
 
 ScavTrap::ScavTrap(const ScavTrap& copy) {
@@ -32,7 +30,7 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& other)
 }
 
 ScavTrap::~ScavTrap() {
-	std::cout << "ScavTrap " << _name << " destructed" << std::endl;
+	std::cout << "*ScavTrap " << _name << " destructed*" << std::endl;
 }
 
 /****************************/
@@ -42,25 +40,25 @@ ScavTrap::~ScavTrap() {
 void 	ScavTrap::attack(const std::string& target) {
 	if (this->_hitPoints > 0 and this->_energyPoints > 0)
 	{
-		std::cout << "(ScavTrap) " << this->_name << " attacks " << target << std::endl;
+		std::cout << "ScavTrap " << this->_name << " attacks " << target << std::endl;
 		std::cout << target << " loses " << this->_attackDamage << " hit points" << std::endl;
 		ClapTrap::useEnergyPoint(this->_energyPoints);
 	}
 	else if (this->_hitPoints <= 0)
-		std::cout << "(ScavTrap) " << this->_name << " is already dead. Leave it alone!" << std::endl << std::endl;
+		std::cout << "ScavTrap " << this->_name << " is already dead. Leave it alone!" << std::endl << std::endl;
 	else
 	{
-		std::cout << "(ScavTrap) " << this->_name << " cannot attack" << std::endl;
+		std::cout << "ScavTrap " << this->_name << " cannot attack" << std::endl;
 		std::cout << "Energy points left: " << this->_energyPoints << std::endl << std::endl;
 	}
 }
 
 void	ScavTrap::guardGate() {
 	if (this->_hitPoints <= 0)
-		std::cout << "(ScavTrap) " << this->_name << " is already dead. Leave it alone!" << std::endl << std::endl;
+		std::cout << "ScavTrap " << this->_name << " is already dead. Leave it alone!" << std::endl << std::endl;
 	else if (this->_energyPoints <= 0)
 	{
-		std::cout << "(ScavTrap) " << this->_name << " cannot attack" << std::endl;
+		std::cout << "ScavTrap " << this->_name << " cannot attack" << std::endl;
 		std::cout << "Energy points left: " << this->_energyPoints << std::endl << std::endl;
 	}
 	else

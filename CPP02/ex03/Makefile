@@ -3,7 +3,7 @@
 ################################################################################
 
 
-NAME	= ScavTrap
+NAME	= BSP
 CC 		= g++
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 DFLAGS	= -MMD -MF $(@:.o=.d)
@@ -16,14 +16,15 @@ NOVISU 	= 1 # 1 = no progress bar usefull when tty is not available
 #                                 PROGRAM'S SRCS                               #
 ################################################################################
 
-FILE_EXTENSION	=	.cpp
+FILE_EXTENSION	= .cpp
 
-SRCS_PATH		=	./srcs
+SRCS_PATH		= ./srcs
 
-INCLUDE_PATH	=	./includes
+INCLUDE_PATH	= ./includes
 
-SRCS			=	ClapTrap.cpp\
-					ScavTrap.cpp
+SRCS			=	Fixed.cpp\
+					Point.cpp\
+					bsp.cpp
 
 MAIN			=	main.cpp
 
@@ -189,7 +190,7 @@ all: header setup $(NAME)
 	@rm -rf .files_changed
 
 header:
-
+	
 ifneq ($(HASH),)
 	@printf "%b" "$(OBJ_COLOR)Name:	$(WARN_COLOR)$(NAME)@$(HASH)\n"
 else
@@ -206,7 +207,7 @@ endif
 $(NAME):	${OBJS} ${OBJ_MAIN}
 			@$(call display_progress_bar)
 			@$(call run_and_test,$(CC) $(CFLAGS) $(DFLAGS) -I$(INCLUDE_PATH) -o $@ ${COMPIL} ${OBJS} ${OBJ_MAIN}) # ${COMPIL} SERT QUE POUR MINILIBX
-			@printf "\n$(WARN_COLOR)Project Ready :)\n"
+			@printf "$(WARN_COLOR)Project Ready :)\n"
 
 setup:
 	@$(call save_files_changed)

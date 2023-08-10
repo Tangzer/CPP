@@ -3,12 +3,12 @@
 ################################################################################
 
 
-NAME	= ScavTrap
+NAME	= FragTrap
 CC 		= g++
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 DFLAGS	= -MMD -MF $(@:.o=.d)
 AUTHOR	= tverdood
-DATE	= 11/07/2023
+DATE	= 15/07/2023
 
 NOVISU 	= 1 # 1 = no progress bar usefull when tty is not available
 
@@ -23,7 +23,8 @@ SRCS_PATH		=	./srcs
 INCLUDE_PATH	=	./includes
 
 SRCS			=	ClapTrap.cpp\
-					ScavTrap.cpp
+					ScavTrap.cpp\
+					FragTrap.cpp
 
 MAIN			=	main.cpp
 
