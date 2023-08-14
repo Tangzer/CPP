@@ -55,4 +55,5 @@ int    main(int ac, char **av) {
         std::cerr << "The program needs 3 arguments" << std::endl;
         return (1);
     }
+    return (0);
 }
