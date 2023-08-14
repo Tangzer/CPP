@@ -12,7 +12,7 @@ public:
 	~HumanB(void);
 
 	void	setWeapon(Weapon& weaponName);
-	void	attack();
+	void	attack(void);
 };
 
 #endif

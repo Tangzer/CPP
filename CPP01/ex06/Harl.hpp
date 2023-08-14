@@ -6,7 +6,6 @@
 
 class Harl {
 private:
-    void	(Harl::*_fPtr[4])(void);
     void    debug(void);
     void    info(void);
     void    warning(void);
