@@ -21,33 +21,50 @@ std::string truncateInfo(std::string info)
 }
 
 void	PhoneBook::addContact(int contactID) {
-	contacts[contactID].setID(contactID);
-	contacts[contactID].setFirstName();
-	contacts[contactID].setLastName();
-	contacts[contactID].setNickname();
-	contacts[contactID].setPhoneNr();
-	contacts[contactID].setDarkestSecret();
+	_contacts[contactID].setID(contactID);
+	_contacts[contactID].setFirstName();
+	_contacts[contactID].setLastName();
+	_contacts[contactID].setNickname();
+	_contacts[contactID].setPhoneNr();
+	_contacts[contactID].setDarkestSecret();
 }
 
 void	PhoneBook::searchContactById() {
 	int			contactID;
 	std::string	temp;
 
-	std::cout << "What's the contact ID you're searching?" << std::endl;
-	std::getline(std::cin, temp);
-	system("clear");
-	try
+	if (this->_contacts[0].getFirstName().empty())
+		std::cout << "Contact list is empty. Try adding a contact first." << std::endl;
+	while (1)
 	{
-		contactID = std::stoi(temp);
+		std::cout << "What's the contact ID you're searching?" << std::endl;
+		std::getline(std::cin, temp);
+		if (std::cin.eof() || std::cin.fail())
+		{
+			std::cin.clear();
+			clearerr(stdin);
+			std::cout << std::endl << "Use EXIT to quit" << std::endl;
+		}
+		if (temp == "EXIT")
+		{
+			std::cout << "Exit program." << std::endl;
+			exit(0);
+		}
+		if (temp.empty())
+			continue ;
+		try
+		{
+			contactID = std::stoi(temp);
+		}
+		catch (const std::out_of_range)
+		{
+			std::cout << "Invalid type. Please try again." << std::endl;
+		}
+		if (contactID < 8 && contactID >= 0)
+			_contacts[contactID].getInfo(contactID);
+		else
+			std::cout << "Index should be between 0 and 7" << std::endl;
 	}
-	catch (const std::invalid_argument&)
-	{
-		std::cout << "Invalid type. Please try again." << std::endl;
-	}
-	if (contactID < 8 && contactID >= 0)
-		contacts[contactID].getInfo(contactID);
-	else
-		std::cout << "Index should be between 0 and 7" << std::endl;
 }
 
 void	PhoneBook::displayContacts() {
@@ -63,10 +80,10 @@ void	PhoneBook::displayContacts() {
 	i = 0;
 	while (i < 8)
 	{
-		firstname = contacts[i].getFirstName();
-		lastname = contacts[i].getLastName();
-		nickname = contacts[i].getNickName();
-		contactID = contacts[i].getID();
+		firstname = _contacts[i].getFirstName();
+		lastname = _contacts[i].getLastName();
+		nickname = _contacts[i].getNickName();
+		contactID = _contacts[i].getID();
 		if (!firstname.empty())
 		{
 			firstname = truncateInfo(firstname);
