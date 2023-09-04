@@ -1,7 +1,8 @@
 #ifndef POINT_HPP
 # define POINT_HPP
 
-# include "Fixed.hpp"
+#include <iostream>
+#include <cmath>
 
 class Point {
 private :
