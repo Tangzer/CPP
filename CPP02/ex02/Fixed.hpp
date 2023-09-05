@@ -11,8 +11,8 @@ private:
 
 public:
 	Fixed();
-	Fixed(const Fixed& other);
-    Fixed& operator=(const Fixed & other);
+	Fixed(const Fixed &other);
+    Fixed& operator=(const Fixed &other);
 	~Fixed();
 
 	Fixed(const int intNumber);
