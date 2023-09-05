@@ -1,6 +1,6 @@
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap() {
+class ScavTrap: public ClapTrap {
 private:
 	bool	_guardMode;
 public:
