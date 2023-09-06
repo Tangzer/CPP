@@ -2,24 +2,24 @@
 
 int main(void)
 {
-	ClapTrap claptrap1("Clappy");
-	ClapTrap clapTrap2("Trappy");
+	ClapTrap Dorian("Dorian");
+	ClapTrap Tanguy("Tanguy");
 
-	claptrap1.attack("Trappy");
-	clapTrap2.takeDamage(5);
+	Dorian.attack("Tanguy");
+	Tanguy.takeDamage(5);
 
-	clapTrap2.attack("20");
-	claptrap1.takeDamage(7);
+	Tanguy.attack("Dorian");
+	Dorian.takeDamage(7);
 
-	claptrap1.beRepaired(5);
-	clapTrap2.attack("Clappy");
+	Dorian.beRepaired(5);
+	Tanguy.attack("Dorian");
 
-	claptrap1.takeDamage(7);
-	claptrap1.attack("Trappy");
+	Dorian.takeDamage(7);
+	Dorian.attack("Tanguy");
 
-	clapTrap2.takeDamage(15);
-	claptrap1.beRepaired(12);
+	Tanguy.takeDamage(15);
+	Dorian.beRepaired(12);
 
-	clapTrap2.beRepaired(5);
+	Tanguy.beRepaired(5);
 	return 0;
 }
