@@ -89,7 +89,7 @@ void ClapTrap::beRepaired(unsigned int amount) {
 		std::cout << this->_name << " is already dead. Leave it alone!" << std::endl << std::endl;
 }
 
-void	ClapTrap::useEnergyPoint(int& energyPoints) {
+void ClapTrap::useEnergyPoint(int &energyPoints) {
 	energyPoints = energyPoints - 1;
 	std::cout << "Energy points left: " << energyPoints << std::endl << std::endl;
 }

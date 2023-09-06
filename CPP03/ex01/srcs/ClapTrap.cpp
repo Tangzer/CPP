@@ -46,7 +46,7 @@ ClapTrap::~ClapTrap() {
 /* --- MEMBER FUNCTIONS --- */
 /****************************/
 
-void ClapTrap::attack(const std::string& target) {
+void ClapTrap::attack(const std::string &target) {
 	if (this->_energyPoints > 0 and this->_hitPoints > 0)
 	{
 		std::cout << this->_name << " attacks " << target << std::endl;
@@ -91,7 +91,7 @@ void ClapTrap::beRepaired(unsigned int amount) {
 		std::cout << this->_name << " is already dead. Leave it alone!" << std::endl << std::endl;
 }
 
-void	ClapTrap::useEnergyPoint(int& energyPoints) {
+void	ClapTrap::useEnergyPoint(int &energyPoints) {
 	energyPoints = energyPoints - 1;
 	std::cout << "Energy points left: " << energyPoints << std::endl << std::endl;
 }

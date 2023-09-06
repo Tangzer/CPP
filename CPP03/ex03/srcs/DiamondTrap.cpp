@@ -19,7 +19,7 @@ DiamondTrap::DiamondTrap(std::string name){
 	this->_attackDamage = FragTrap::_attackDamage;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap& copy) {
+DiamondTrap::DiamondTrap(const DiamondTrap &copy) {
 	*this = copy;
     std::cout << "Copy DiamondTrap " << _name << " constructed!" << std::endl;
 }

@@ -18,12 +18,12 @@ ScavTrap::ScavTrap(std::string name)
 	std::cout << _name <<" ScavTrap constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap& copy) {
+ScavTrap::ScavTrap(const ScavTrap &copy) {
 	*this = copy;
 	std::cout << "Copy ScavTrap " << _name << " constructed" << std::endl;
 }
 
-ScavTrap& ScavTrap::operator=(const ScavTrap& other)
+ScavTrap& ScavTrap::operator=(const ScavTrap &other)
 {
 	if (this != &other)
 		ClapTrap::operator=(other);

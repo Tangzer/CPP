@@ -16,12 +16,12 @@ ScavTrap::ScavTrap(std::string name) {
 	this->_name = name;
 }
 
-ScavTrap::ScavTrap(const ScavTrap& copy) {
+ScavTrap::ScavTrap(const ScavTrap &copy) {
 	*this = copy;
 	std::cout << "Copy ScavTrap " << _name << " constructed" << std::endl;
 }
 
-ScavTrap& ScavTrap::operator=(const ScavTrap& other)
+ScavTrap& ScavTrap::operator=(const ScavTrap &other)
 {
 	if (this != &other)
 		ClapTrap::operator=(other);
@@ -37,7 +37,7 @@ ScavTrap::~ScavTrap() {
 /* --- MEMBER FUNCTIONS --- */
 /****************************/
 
-void 	ScavTrap::attack(const std::string& target) {
+void 	ScavTrap::attack(const std::string &target) {
 	if (this->_hitPoints > 0 and this->_energyPoints > 0)
 	{
 		std::cout << "ScavTrap " << this->_name << " attacks " << target << std::endl;
