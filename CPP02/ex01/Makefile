@@ -4,7 +4,7 @@
 
 
 NAME	= Towards_a_more_useful_fixed-point_number_class
-CC 		= g++
+CC 		= c++
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 DFLAGS	= -MMD -MF $(@:.o=.d)
 AUTHOR	= tverdood

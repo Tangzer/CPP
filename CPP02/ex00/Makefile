@@ -4,7 +4,7 @@
 
 
 NAME	= My_First_Class_in_Orthodox_Canonical_Form
-CC 		= g++
+CC 		= c++
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 DFLAGS	= -MMD -MF $(@:.o=.d)
 AUTHOR	= tverdood

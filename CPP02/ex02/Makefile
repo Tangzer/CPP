@@ -4,7 +4,7 @@
 
 
 NAME	= Now_we_are_talking
-CC 		= g++
+CC 		= c++
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 DFLAGS	= -MMD -MF $(@:.o=.d)
 AUTHOR	= tverdood
