@@ -23,8 +23,13 @@ FragTrap::FragTrap(std::string name) {
 
 FragTrap&	FragTrap::operator=(const FragTrap &other) {
 	std::cout << "FragTrap Assignment operator called" << std::endl;
-	if (this != &other)   
-        ClapTrap::operator=(other);
+	if (this != &other)
+	{
+		this->_name = other._name;
+		this->_hitPoints = other._hitPoints;
+		this->_energyPoints = other._energyPoints;
+		this->_attackDamage = other._attackDamage;
+	}
 	return (*this);
 }
 

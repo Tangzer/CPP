@@ -9,12 +9,13 @@ int main(void) {
 		std::cout << "--------------" << std::endl << std::endl;
 
 		FragTrap trap("Trappy");
-		FragTrap copy;
+		FragTrap copy = trap;
+
+		std::cout << "-------------------" << std::endl;
 
 		for (int i = 0; i < 3; i++)
 			trap.attack("Jeff");
 
-		copy = trap;
 		for (int i = 0; i < 3; i++)
 			copy.attack("Alfred");
 	}

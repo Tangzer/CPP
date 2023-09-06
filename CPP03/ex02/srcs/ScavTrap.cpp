@@ -42,7 +42,7 @@ void 	ScavTrap::attack(const std::string &target) {
 	{
 		std::cout << "(ScavTrap) " << this->_name << " attacks " << target << std::endl;
 		std::cout << target << " loses " << this->_attackDamage << " hit points" << std::endl;
-		ClapTrap::useEnergyPoint(this->_energyPoints);
+		ClapTrap::useEnergyPoint(this->_name, this->_energyPoints);
 	}
 	else if (this->_hitPoints <= 0)
 		std::cout << "(ScavTrap) " << this->_name << " is already dead. Leave it alone!" << std::endl << std::endl;

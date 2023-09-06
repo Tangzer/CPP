@@ -50,15 +50,14 @@ void ClapTrap::attack(const std::string &target) {
 	if (this->_energyPoints > 0 and this->_hitPoints > 0)
 	{
 		std::cout << this->_name << " attacks " << target << std::endl;
-		std::cout << target << " loses " << this->_attackDamage << " hit points" << std::endl;
-		useEnergyPoint(this->_energyPoints);
+		useEnergyPoint(_name, _energyPoints);
 	}
 	else if (this->_hitPoints <= 0)
 		std::cout << this->_name << " is already dead. Leave it alone!" << std::endl << std::endl;
 	else
 	{
 		std::cout << this->_name << " cannot attack" << std::endl;
-		std::cout << "Energy points left: " << this->_energyPoints << std::endl << std::endl;
+		std::cout << _name << "'s energy points left: " << this->_energyPoints << std::endl << std::endl;
 	}
 }
 
@@ -69,9 +68,9 @@ void ClapTrap::takeDamage(unsigned int amount) {
 		std::cout << this->_name << " gets attacked" << std::endl;
 		std::cout << this->_name << " loses " << amount << " hit points" << std::endl;
 		if (this->_hitPoints <= 0)
-			std::cout << this->_name << " died of its injuries" << std::endl;
+			std::cout << this->_name << " died of his injuries" << std::endl;
 		else
-			std::cout << this->_name << " has " << this->_hitPoints << " hit points remaining" << std::endl;
+			std::cout << this->_name << "'s hit points remaining: " << _hitPoints << std::endl;
 		std::cout << std::endl;
 	}
 	else
@@ -84,14 +83,14 @@ void ClapTrap::beRepaired(unsigned int amount) {
 		this->_hitPoints = this->_hitPoints + amount;
 		std::cout << this->_name << " gets repaired" << std::endl;
 		std::cout << this->_name << " gains " << amount << " hit points" << std::endl;
-		std::cout << this->_name << " has " << this->_hitPoints << " hit points remaining" << std::endl;
+		std::cout << this->_name << "'s hit points remaining: " << _hitPoints << std::endl;
 		std::cout << std::endl;
 	}
 	else
 		std::cout << this->_name << " is already dead. Leave it alone!" << std::endl << std::endl;
 }
 
-void	ClapTrap::useEnergyPoint(int &energyPoints) {
+void ClapTrap::useEnergyPoint(std::string &name, int &energyPoints) {
 	energyPoints = energyPoints - 1;
-	std::cout << "Energy points left: " << energyPoints << std::endl << std::endl;
+	std::cout << name << "'s energy points left: " << energyPoints << std::endl << std::endl;
 }
