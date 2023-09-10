@@ -16,6 +16,9 @@ public:
 
 	std::string		getType() const;
 	void virtual	makeSound() const;
+
+	virtual void 	getIdea(int index) const;
+	virtual void 	printBrainAddress();
 };
 
 #endif
