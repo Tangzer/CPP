@@ -9,8 +9,7 @@ DiamondTrap::DiamondTrap(void) {
     std::cout << "*Default DiamondTrap constructed*" << std::endl;
 }
  
-DiamondTrap::DiamondTrap(std::string name){
-	
+DiamondTrap::DiamondTrap(std::string name) {
 	std::cout << name << " DiamondTrap constructor called" << std::endl;
 	this->_name = name;
     ClapTrap::_name = name + "_clap_name";
@@ -20,7 +19,7 @@ DiamondTrap::DiamondTrap(std::string name){
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &copy) {
-	*this = copy;
+	this->_name = copy._name;
     std::cout << "Copy DiamondTrap " << _name << " constructed!" << std::endl;
 }
 

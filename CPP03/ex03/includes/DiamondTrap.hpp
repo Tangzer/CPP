@@ -10,10 +10,10 @@ private:
 	std::string _name;
 public:
 	DiamondTrap(void);
-	DiamondTrap(const DiamondTrap &copy);
 	DiamondTrap(std::string name);
-	~DiamondTrap(void);
+	DiamondTrap(const DiamondTrap &copy);
 	DiamondTrap &operator=(const DiamondTrap &DiamondTrap);
+	~DiamondTrap(void);
 
 	void		whoAmI();
 	void		attack(std::string target);

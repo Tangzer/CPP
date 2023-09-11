@@ -10,8 +10,7 @@ int main(void) {
 
 		FragTrap trap("Trappy");
 		FragTrap copy = trap;
-
-		std::cout << "-------------------" << std::endl;
+		std::cout << std::endl;
 
 		for (int i = 0; i < 3; i++)
 			trap.attack("Jeff");
@@ -25,9 +24,11 @@ int main(void) {
 		std::cout << "-------------------" << std::endl;
 
 		FragTrap trap;
+		std::cout << std::endl;
 
 		for (int i = 0; i <= 4; i++)
 		{
+			std::cout << "----" << i << "----" << std::endl;
 			trap.attack("Jeff");
 			trap.takeDamage(30);
 		}
@@ -38,9 +39,11 @@ int main(void) {
 		std::cout << "--------------" << std::endl;
 
 		FragTrap trap("HealBot");
+		std::cout << std::endl;
 
 		for (int i = 0; i <= 4; i++)
 		{
+			std::cout << "----" << i << "----" << std::endl;
 			trap.takeDamage(30);
 			trap.beRepaired(5);
 		}
@@ -51,7 +54,10 @@ int main(void) {
 		std::cout << "-----------------" << std::endl;
 
 		FragTrap trap("Jeff");
+		std::cout << std::endl;
+
 		trap.highFivesGuys();
+		std::cout << std::endl;
 	}
 	return (0);
 }

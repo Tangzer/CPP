@@ -18,7 +18,7 @@ ScavTrap::ScavTrap(std::string name) {
 
 ScavTrap::ScavTrap(const ScavTrap &copy) {
 	*this = copy;
-	std::cout << "Copy ScavTrap " << _name << " constructed" << std::endl;
+	std::cout << "Copy ScavTrap " << _name << " constructed!" << std::endl;
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap &other)
