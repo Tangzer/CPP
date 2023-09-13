@@ -29,7 +29,7 @@ int main()
 		Wouf.printBrainAddress();
 
 		Wouf.getIdea(1);
-		Wouf.setIdea("This is a dog", 1);
+		Wouf.addIdea("This is a dog", 1);
 		Dog Waf = Wouf;
 		std::cout << "Waf Brain memory address :";
 		Waf.printBrainAddress();
@@ -40,7 +40,7 @@ int main()
 		Miaow.printBrainAddress();
 
 		Miaow.getIdea(1);
-		Miaow.setIdea("This is a cat", 1);
+		Miaow.addIdea("This is a cat", 1);
 		Cat Meow = Miaow;
 		std::cout << "Meow Brain memory address :";
 		Meow.printBrainAddress();

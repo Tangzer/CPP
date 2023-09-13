@@ -5,10 +5,6 @@ WrongAnimal::WrongAnimal() {
 	std::cout << "* WrongAnimal default constructor called *" << std::endl;
 }
 
-WrongAnimal::~WrongAnimal() {
-	std::cout << "* WrongAnimal default deconstructor called *" << std::endl;
-}
-
 WrongAnimal::WrongAnimal(const WrongAnimal &WrongAnimal) {
 	*this = WrongAnimal;
 	std::cout << "* WrongAnimal copy constructor called *" << std::endl;
@@ -19,6 +15,14 @@ WrongAnimal &WrongAnimal::operator=(const WrongAnimal &WrongAnimal) {
 	this->type = WrongAnimal.type;
 	return (*this);
 }
+
+WrongAnimal::~WrongAnimal() {
+	std::cout << "* WrongAnimal default deconstructor called *" << std::endl;
+}
+
+/****************************/
+/* --- MEMBER FUNCTIONS --- */
+/****************************/
 
 void	WrongAnimal::makeSound() const {
 	std::cout << "Wrong Animal sounds..." << std::endl;

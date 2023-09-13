@@ -20,6 +20,10 @@ Animal &Animal::operator=(const Animal &animal) {
 	return (*this);
 }
 
+/****************************/
+/* --- MEMBER FUNCTIONS --- */
+/****************************/
+
 void Animal::makeSound() const {
 	std::cout << "Animal sounds..." << std::endl;
 }

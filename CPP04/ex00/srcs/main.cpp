@@ -30,8 +30,8 @@ int main() {
 	const WrongAnimal* wc = new WrongCat();
 	std::cout << std::endl;
 
-	std::cout << wa->getType() << " " << std::endl;
-	std::cout << wc->getType() << " " << std::endl;
+	std::cout << wa->getType() << std::endl;
+	std::cout << wc->getType() << std::endl;
 	std::cout << std::endl;
 
 	wa->makeSound();

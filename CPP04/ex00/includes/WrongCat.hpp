@@ -4,7 +4,7 @@
 # include "WrongAnimal.hpp"
 # include <iostream>
 
-class WrongCat: public WrongAnimal {
+class WrongCat : public WrongAnimal {
 public:
 	WrongCat();
 	WrongCat(const WrongCat &WrongCat);

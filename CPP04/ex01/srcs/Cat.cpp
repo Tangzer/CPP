@@ -6,37 +6,39 @@ Cat::Cat() : Animal() {
 	this->_brain = new Brain();
 }
 
-Cat::~Cat() {
-	std::cout << "* Cat default deconstructor called *" << std::endl;
-	delete this->_brain;
-	printBrainAddress();
-}
-
-Cat::Cat(const Cat &cat) : Animal() {
+Cat::Cat(const Cat &other) : Animal() {
 	std::cout << "* Cat copy constructor called *" << std::endl;
-	this->_brain = new Brain();
-	*(this->_brain) = *(cat._brain);
+	*this = other;
 }
 
-Cat& Cat::operator=(const Cat &cat) {
+Cat& Cat::operator=(const Cat &other) {
 	std::cout << "* Cat assignment operator called *" << std::endl;
-	this->_type = cat._type;
-	*(this->_brain) = *(cat._brain);
+	this->_type = other._type;
+	if (this->_brain)
+		delete(this->_brain);
+	this->_brain = new Brain(*other._brain);
 	return (*this);
 }
 
+Cat::~Cat() {
+	std::cout << "* Cat default deconstructor called *" << std::endl;
+	delete(this->_brain);
+	printBrainAddress();
+}
+
+/****************************/
+/* --- MEMBER FUNCTIONS --- */
+/****************************/
+
 void Cat::makeSound() const {
-	std::cout << "Cat sounds..." << std::endl;
+	std::cout << "Meooow..." << std::endl;
 }
 
 void Cat::printBrainAddress() {
 	std::cout << &this->_brain << std::endl;
 }
 
-void Cat::getIdea(int index) const {
-	std::cout << this->_brain->getIdea(index) << std::endl;
-}
-
-void Cat::setIdea(std::string idea, int index) {
-	this->_brain->setIdea(idea, index);
+void Cat::addIdea(std::string idea, int index) {
+	index = 0;
+	this->_brain->addIdea(idea, index);
 }

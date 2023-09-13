@@ -17,8 +17,8 @@ public:
 	void virtual	makeSound() const;
 
 	virtual void	printBrainAddress();
-	virtual void	getIdea(int index) const;
-	void			setIdea(std::string idea, int index);
+//	virtual void	getIdea(int index) const;
+	void			addIdea(std::string idea, int index);
 };
 
 #endif
