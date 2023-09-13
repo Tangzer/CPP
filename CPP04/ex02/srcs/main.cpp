@@ -1,6 +1,6 @@
 #include "Dog.hpp"
 #include "Cat.hpp"
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 #include "Brain.hpp"
@@ -10,13 +10,15 @@
 int main()
 {
 	{
+	//	AAnimal test;
+
 		std::cout << "--- MAIN ---" << std::endl;
-		const Animal* j = new Dog();
+		const AAnimal* j = new Dog();
 		std::cout << std::endl;
-		const Animal* i = new Cat();
+		const AAnimal* i = new Cat();
 		std::cout << std::endl;
 
-		delete j;//should not create a leak
+		delete j;
 		std::cout << std::endl;
 		delete i;
 		std::cout << std::endl;
@@ -48,7 +50,7 @@ int main()
 	}
 	{
 		std::cout << "--- Animal array ---" << std::endl;
-		Animal* tab[10];
+		AAnimal* tab[10];
 
 		for (int i = 0; i < 10; i++)
 		{
