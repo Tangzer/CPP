@@ -6,16 +6,18 @@ int main(void) {
 		std::cout << "--- ATTACK ---" << std::endl;
 		std::cout << "--------------" << std::endl << std::endl;
 
-		DiamondTrap trap("Trappy");
+		DiamondTrap trap("DiamondTrappy");
 		std::cout << std::endl;
-		DiamondTrap copy = trap;
+//		DiamondTrap copy = trap;
+//		std::cout << std::endl;
+
+		trap.printTrap();
 		std::cout << std::endl;
-
-		for (int i = 0; i < 2; i++)
-			trap.attack("Jeff");
-
-		for (int i = 0; i < 2; i++)
-			copy.attack("Alfred");
+//		for (int i = 0; i < 2; i++)
+//			trap.attack("Jeff");
+//
+//		for (int i = 0; i < 2; i++)
+//			copy.attack("Alfred");
 	}
 //	{
 //		std::cout << "-------------------" << std::endl;

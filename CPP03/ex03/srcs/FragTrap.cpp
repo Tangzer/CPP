@@ -6,6 +6,7 @@ FragTrap::FragTrap(void) {
 	this->_energyPoints = 100;
 	this->_attackDamage = 30;
 	std::cout << "*Default FragTrap constructed!*" << std::endl;
+//	printTrap();
 }
 
 FragTrap::FragTrap(std::string name) {
@@ -19,10 +20,9 @@ FragTrap::FragTrap(std::string name) {
 FragTrap::FragTrap(const FragTrap &copy) {
 	*this = copy;
 	std::cout << "Copy FragTrap " << _name << " constructed!" << std::endl;
-
 }
 
-FragTrap&	FragTrap::operator=(const FragTrap &other) {
+FragTrap &FragTrap::operator=(const FragTrap &other) {
 	std::cout << "FragTrap Assignment operator called" << std::endl;
 	if (this != &other)   
         ClapTrap::operator=(other);
@@ -39,4 +39,11 @@ FragTrap::~FragTrap(void) {
 
 void FragTrap::highFivesGuys(void) {
 	std::cout << this->_name << " would like to high five you. If that's okay with you :)." << std::endl;
+}
+
+void	FragTrap::printTrap() {
+	std::cout << "Name = " << this->_name << std::endl;
+	std::cout << "Hitpoints (Frag=100) = " << this->_hitPoints << std::endl;
+	std::cout << "Energypoints (Scav=50) = " << this->_energyPoints << std::endl;
+	std::cout << "AttackDamage (Frag=30) = " << this->_attackDamage << std::endl << std::endl;
 }

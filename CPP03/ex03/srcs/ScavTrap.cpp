@@ -6,6 +6,7 @@ ScavTrap::ScavTrap() {
 	this->_energyPoints = 50;
 	this->_attackDamage = 20;
 	std::cout << "*Default ScavTrap constructed!*" << std::endl;
+//	printTrap();
 }
 
 ScavTrap::ScavTrap(std::string name) {
@@ -74,4 +75,11 @@ void	ScavTrap::guardGate() {
 			std::cout << this->_name << ": Guard mode turned ON" << std::endl;
 		}
 	}
+}
+
+void	ScavTrap::printTrap() {
+	std::cout << "Name = " << this->_name << std::endl;
+	std::cout << "Hitpoints (Frag=100) = " << this->_hitPoints << std::endl;
+	std::cout << "Energypoints (Scav=50) = " << this->_energyPoints << std::endl;
+	std::cout << "AttackDamage (Frag=30) = " << this->_attackDamage << std::endl << std::endl;
 }

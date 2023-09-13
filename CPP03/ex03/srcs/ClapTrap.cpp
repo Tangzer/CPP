@@ -90,7 +90,14 @@ void ClapTrap::beRepaired(unsigned int amount) {
 		std::cout << this->_name << " is already dead. Leave it alone!" << std::endl << std::endl;
 }
 
-void ClapTrap::useEnergyPoint(std::string &name, int &energyPoints) {
+void ClapTrap::useEnergyPoint(std::string &name,unsigned int &energyPoints) {
 	energyPoints = energyPoints - 1;
 	std::cout << name << "'s energy points left: " << energyPoints << std::endl << std::endl;
+}
+
+void	ClapTrap::printTrap() {
+	std::cout << "Name = " << this->_name << std::endl;
+	std::cout << "Hitpoints (Frag=100) = " << this->_hitPoints << std::endl;
+	std::cout << "Energypoints (Scav=50) = " << this->_energyPoints << std::endl;
+	std::cout << "AttackDamage (Frag=30) = " << this->_attackDamage << std::endl << std::endl;
 }

@@ -3,7 +3,7 @@
 
 # include "ClapTrap.hpp"
 
-class FragTrap:  virtual public ClapTrap
+class FragTrap : virtual public ClapTrap
 {
 	
 public:
@@ -14,6 +14,7 @@ public:
 	FragTrap &operator=(const FragTrap& FragTrap);
 
 	void	highFivesGuys(void);
+	void	printTrap();
 };
 
 #endif
