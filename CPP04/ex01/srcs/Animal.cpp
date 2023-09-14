@@ -10,7 +10,8 @@ Animal::~Animal() {
 }
 
 Animal::Animal(const Animal &animal) {
-	*this = animal;
+	if (this != &animal)
+		*this = animal;
 	std::cout << "* Animal copy constructor called *" << std::endl;
 }
 

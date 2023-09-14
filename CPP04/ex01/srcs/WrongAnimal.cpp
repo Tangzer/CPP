@@ -6,7 +6,8 @@ WrongAnimal::WrongAnimal() {
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal &WrongAnimal) {
-	*this = WrongAnimal;
+	if (this != &WrongAnimal)
+		*this = WrongAnimal;
 	std::cout << "* WrongAnimal copy constructor called *" << std::endl;
 }
 

@@ -10,7 +10,8 @@ AAnimal::~AAnimal() {
 }
 
 AAnimal::AAnimal(const AAnimal &aanimal) {
-	*this = aanimal;
+	if (this != &aanimal)
+		*this = aanimal;
 	std::cout << "* AAnimal copy constructor called *" << std::endl;
 }
 
@@ -19,6 +20,10 @@ AAnimal &AAnimal::operator=(const AAnimal &aanimal) {
 	this->_type = aanimal._type;
 	return (*this);
 }
+
+/****************************/
+/* --- MEMBER FUNCTIONS --- */
+/****************************/
 
 void AAnimal::makeSound() const {
 	std::cout << "AAnimal sounds..." << std::endl;

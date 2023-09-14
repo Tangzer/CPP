@@ -25,6 +25,10 @@ Cat& Cat::operator=(const Cat &cat) {
 	return (*this);
 }
 
+/****************************/
+/* --- MEMBER FUNCTIONS --- */
+/****************************/
+
 void Cat::makeSound() const {
 	std::cout << "Cat sounds..." << std::endl;
 }

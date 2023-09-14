@@ -6,7 +6,8 @@ WrongCat::WrongCat() {
 }
 
 WrongCat::WrongCat(const WrongCat &WrongCat) {
-	*this = WrongCat;
+	if (this != &WrongCat)
+		*this = WrongCat;
 	std::cout << "* WrongCat copy constructor called *" << std::endl;
 }
 

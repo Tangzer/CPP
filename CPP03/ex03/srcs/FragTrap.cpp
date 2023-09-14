@@ -18,7 +18,8 @@ FragTrap::FragTrap(std::string name) {
 }
 
 FragTrap::FragTrap(const FragTrap &copy) {
-	*this = copy;
+	if (this != &copy)
+		*this = copy;
 	std::cout << "Copy FragTrap " << _name << " constructed!" << std::endl;
 }
 

@@ -16,6 +16,10 @@ Brain::~Brain() {
 	std::cout << "* Brain deconstructor called *" << std::endl;
 }
 
+/****************************/
+/* --- MEMBER FUNCTIONS --- */
+/****************************/
+
 Brain::Brain(Brain const &brain) {
 	std::cout << "* Brain copy constructor called *" << std::endl;
 	for (int i = 0; i < NB_OF_IDEAS; i++)
@@ -33,7 +37,6 @@ std::string	Brain::getIdea(int index) const {
 	return(this->_ideas[index]);
 }
 
-void Brain::setIdea(std::string idea, int index)
-{
+void Brain::setIdea(std::string idea, int index) {
 	this->_ideas[index] = idea;
 }

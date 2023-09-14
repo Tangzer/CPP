@@ -20,10 +20,15 @@ Dog::Dog(const Dog &dog) : AAnimal() {
 
 Dog &Dog::operator=(const Dog &dog) {
 	std::cout << "* Dog assignment operator called *" << std::endl;
+	if (this != &dog)
 	this->_type = dog._type;
 	*(this->_brain) = *(dog._brain);
 	return (*this);
 }
+
+/****************************/
+/* --- MEMBER FUNCTIONS --- */
+/****************************/
 
 void Dog::makeSound() const {
 	std::cout << "Dog sounds..." << std::endl;

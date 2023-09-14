@@ -9,7 +9,8 @@ FragTrap::FragTrap(void) {
 }
 
 FragTrap::FragTrap(const FragTrap &copy) {
-	*this = copy;
+	if (this != &copy)
+		*this = copy;
 	std::cout << "FragTrap copy constructor called" << std::endl;
 }
 

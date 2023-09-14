@@ -10,7 +10,8 @@ Cat::~Cat() {
 }
 
 Cat::Cat(const Cat &other) {
-	*this = other;
+	if (this != &other)
+		*this = other;
 	std::cout << "* Cat copy constructor called *" << std::endl;
 }
 
@@ -19,6 +20,10 @@ Cat& Cat::operator=(const Cat &other) {
 	this->_type = other._type;
 	return (*this);
 }
+
+/****************************/
+/* --- MEMBER FUNCTIONS --- */
+/****************************/
 
 void Cat::makeSound() const {
 	std::cout << "Miaaaouw" << std::endl;

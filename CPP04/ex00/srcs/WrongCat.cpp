@@ -10,7 +10,8 @@ WrongCat::~WrongCat() {
 }
 
 WrongCat::WrongCat(const WrongCat &WrongCat) {
-	*this = WrongCat;
+	if (this != &WrongCat)
+		*this = WrongCat;
 	std::cout << "* WrongCat copy constructor called *" << std::endl;
 }
 
@@ -19,6 +20,10 @@ WrongCat &WrongCat::operator=(const WrongCat &WrongCat) {
 	this->type = WrongCat.type;
 	return (*this);
 }
+
+/****************************/
+/* --- MEMBER FUNCTIONS --- */
+/****************************/
 
 void WrongCat::makeSound() const {
 	std::cout << "Wrong Cat sounds..." << std::endl;

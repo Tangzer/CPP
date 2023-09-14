@@ -18,7 +18,8 @@ ScavTrap::ScavTrap(std::string name) {
 }
 
 ScavTrap::ScavTrap(const ScavTrap &copy) {
-	*this = copy;
+	if (this != &copy)
+		*this = copy;
 	std::cout << "Copy ScavTrap " << _name << " constructed!" << std::endl;
 }
 

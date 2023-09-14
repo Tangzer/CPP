@@ -10,7 +10,8 @@ WrongAnimal::~WrongAnimal() {
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal &WrongAnimal) {
-	*this = WrongAnimal;
+	if (this != &WrongAnimal)
+		*this = WrongAnimal;
 	std::cout << "* WrongAnimal copy constructor called *" << std::endl;
 }
 
@@ -19,6 +20,10 @@ WrongAnimal &WrongAnimal::operator=(const WrongAnimal &WrongAnimal) {
 	this->type = WrongAnimal.type;
 	return (*this);
 }
+
+/****************************/
+/* --- MEMBER FUNCTIONS --- */
+/****************************/
 
 void	WrongAnimal::makeSound() const {
 	std::cout << "Wrong Animal sounds..." << std::endl;
