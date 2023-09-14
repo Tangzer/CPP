@@ -32,7 +32,13 @@ Brain::~Brain() {
 /* --- MEMBER FUNCTIONS --- */
 /****************************/
 
-void Brain::addIdea(std::string idea, int index)
-{
-	this->_ideas[index] = idea;
+void Brain::addIdea(std::string idea, int index) {
+	if (index > 0 && index < 100)
+		this->_ideas[index] = idea;
+	else
+		std::cout << "index must be between 0 and 99" << std::endl;
+}
+
+std::string Brain::getIdea(int index) const {
+	return (this->_ideas[index]);
 }

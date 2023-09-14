@@ -9,31 +9,38 @@
 
 int main()
 {
-	{
-		std::cout << "--- MAIN ---" << std::endl;
-		const Animal* j = new Dog();
-		std::cout << std::endl;
-		const Animal* i = new Cat();
-		std::cout << std::endl;
-
-		delete j;//should not create a leak
-		std::cout << std::endl;
-		delete i;
-		std::cout << std::endl;
-	}
+//	{
+//		std::cout << "--- MAIN ---" << std::endl;
+//		const Animal* j = new Dog();
+//		std::cout << std::endl;
+//		const Animal* i = new Cat();
+//		std::cout << std::endl;
+//
+//		delete j;//should not create a leak
+//		std::cout << std::endl;
+//		delete i;
+//		std::cout << std::endl;
+//	}
 	{
 		std::cout << "--- Brain deep copy ---" << std::endl;
 
 		Dog Wouf;
 		std::cout << "Wouf Brain memory address :";
 		Wouf.printBrainAddress();
+		std::cout << std::endl;
 
 		Wouf.getIdea(1);
 		Wouf.addIdea("This is a dog", 1);
+		Wouf.getIdea(1);
+		std::cout << std::endl;
+		std::cout << "-------------" << std::endl;
+		std::cout << std::endl;
 		Dog Waf = Wouf;
 		std::cout << "Waf Brain memory address :";
 		Waf.printBrainAddress();
+		std::cout << std::endl;
 		Waf.getIdea(1);
+		std::cout << std::endl;
 
 		Cat Miaow;
 		std::cout << "Miaow Brain memory address :";
@@ -68,9 +75,6 @@ int main()
 			sleep(1);
 			std::cout << std::endl;
 		}
-
-
-
 		for (int i = 9; i >= 0; i--)
 		{
 			std::cout << i + 1 << "/" << std::endl;

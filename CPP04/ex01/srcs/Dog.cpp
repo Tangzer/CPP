@@ -14,8 +14,6 @@ Dog::Dog(const Dog &other) : Animal() {
 Dog &Dog::operator=(const Dog &other) {
 	std::cout << "* Dog assignment operator called *" << std::endl;
 	this->_type = other._type;
-	if (this->_brain)
-		delete(this->_brain);
 	this->_brain = new Brain(*other._brain);
 	return (*this);
 }
@@ -23,7 +21,6 @@ Dog &Dog::operator=(const Dog &other) {
 Dog::~Dog() {
 	std::cout << "* Dog default deconstructor called *" << std::endl;
 	delete(this->_brain);
-	printBrainAddress();
 }
 
 /****************************/
@@ -40,4 +37,9 @@ void Dog::printBrainAddress() {
 
 void Dog::addIdea(std::string idea, int index) {
 	this->_brain->addIdea(idea, index);
+}
+
+void Dog::getIdea(int index) const
+{
+	std::cout << this->_brain->getIdea(index) << std::endl;
 }

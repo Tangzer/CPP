@@ -14,8 +14,6 @@ Cat::Cat(const Cat &other) : Animal() {
 Cat& Cat::operator=(const Cat &other) {
 	std::cout << "* Cat assignment operator called *" << std::endl;
 	this->_type = other._type;
-	if (this->_brain)
-		delete(this->_brain);
 	this->_brain = new Brain(*other._brain);
 	return (*this);
 }
@@ -23,7 +21,6 @@ Cat& Cat::operator=(const Cat &other) {
 Cat::~Cat() {
 	std::cout << "* Cat default deconstructor called *" << std::endl;
 	delete(this->_brain);
-	printBrainAddress();
 }
 
 /****************************/
@@ -41,4 +38,9 @@ void Cat::printBrainAddress() {
 void Cat::addIdea(std::string idea, int index) {
 	index = 0;
 	this->_brain->addIdea(idea, index);
+}
+
+void Cat::getIdea(int index) const
+{
+	std::cout << this->_brain->getIdea(index) << std::endl;
 }
