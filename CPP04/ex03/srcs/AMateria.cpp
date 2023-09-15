@@ -2,7 +2,7 @@
 
 AMateria::AMateria() : _type("empty") {}
 
-AMateria::AMateria(AMateria const &other) : _type(copy.getType()) {}
+AMateria::AMateria(AMateria const &copy) : _type(copy.getType()) {}
 
 AMateria& AMateria::operator=(AMateria const &other) {
 	if (this != &other)
@@ -19,7 +19,7 @@ AMateria::~AMateria() {}
 /* --- MEMBER FUNCTIONS --- */
 /****************************/
 
-std::string const & AMateria::getType() const {
+std::string const &AMateria::getType() const {
 	return (this->_type);
 }
 

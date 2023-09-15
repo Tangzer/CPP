@@ -22,7 +22,11 @@ SRCS_PATH		=	./srcs
 
 INCLUDE_PATH	=	./includes
 
-SRCS			=
+SRCS			=	AMateria.cpp\
+					Character.cpp\
+					Cure.cpp\
+					Ice.cpp\
+					MateriaSource.cpp\
 
 MAIN			=	main.cpp
 
