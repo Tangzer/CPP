@@ -54,15 +54,15 @@ void Bureaucrat::checkGrade() const {
 	if (_grade < 1) { throw GradeTooHighException();}
 }
 
-void Bureaucrat::signForm(Form &form) {
-	if (getGrade() > form.getGradeToSign())
+void Bureaucrat::signForm(AForm &aform) {
+	if (getGrade() > aform.getGradeToSign())
 	{
-		std::cout << this->getName() << " couldn't sign " << form.getName() << " because ";
-		throw Form::GradeTooLowException();
+		std::cout << this->getName() << " couldn't sign " << aform.getName() << " because ";
+		throw AForm::GradeTooLowException();
 	}
 	else
 	{
-		std::cout << this->getName() << " signed " << form.getName() << std::endl;
-		form.setSignature(true);
+		std::cout << this->getName() << " signed " << aform.getName() << std::endl;
+		aform.setSignature(true);
 	}
 }
