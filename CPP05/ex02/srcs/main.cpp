@@ -20,7 +20,7 @@ int main() {
 //		std::cout << "Error: " << e.what() << std::endl;
 //	}
 //	std::cout << std::endl;
-//
+
 	try {
 		AForm *form = new PresidentialPardonForm( "Target2" );
 		form->beSigned( b1 );
