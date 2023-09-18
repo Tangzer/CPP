@@ -91,6 +91,19 @@ void Character::equip(AMateria *m) {
 	}
 }
 
+void Character::unequip(int idx) {
+	if (idx < INVSIZE)
+	{
+		if (this->_storage[idx] != NULL)
+		{
+			if (addToList(this->_storage, idx) == false)
+				std::cout << "No more space on the ground. Can't unequip any more materias." << std::endl;
+			else
+				this->_storage[idx] = NULL;
+		}
+	}
+}
+
 bool Character::addToList(AMateria *storage[], int idx) {
 	for (int i = 0; i < GROUNDSIZE; i++)
 	{
@@ -103,19 +116,6 @@ bool Character::addToList(AMateria *storage[], int idx) {
 		}
 	}
 	return (false);
-}
-
-void Character::unequip(int idx) {
-	if (idx < INVSIZE)
-	{
-		if (this->_storage[idx] != NULL)
-		{
-			if (addToList(this->_storage, idx) == false)
-				std::cout << "No more space on the ground. Can't unequip any more materias." << std::endl;
-			else
-				this->_storage[idx] = NULL;
-		}
-	}
 }
 
 void Character::use(int idx, ICharacter& target) {

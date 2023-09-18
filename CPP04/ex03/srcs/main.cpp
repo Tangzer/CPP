@@ -22,6 +22,7 @@ int main()
 		src->learnMateria(new Cure());
 		src->learnMateria(new Ice());
 		src->learnMateria(new Cure());
+		std::cout << std::endl;
 
 		ICharacter* me = new Character("me");
 		AMateria* tmp;
@@ -30,9 +31,11 @@ int main()
 		tmp = src->createMateria("cure");
 		me->equip(tmp);
 		ICharacter* bob = new Character("bob");
+		std::cout << std::endl;
 
 		me->use(0, *bob);
 		me->use(1, *bob);
+		std::cout << std::endl;
 
 		delete bob;
 		delete me;
@@ -43,41 +46,54 @@ int main()
 		IMateriaSource* src = new MateriaSource();
 		src->learnMateria(new Ice());
 		src->learnMateria(new Cure());
+		std::cout << std::endl;
 
 		ICharacter* jason = new Character("Jason");
 		AMateria* tmp;
-		for (int i = 0; i < 15; i++)
+		std::cout << std::endl;
+		for (int i = 0; i < 11; i++)
 		{
 			tmp = src->createMateria("ice");
 			jason->equip(tmp);
 			jason->unequip(0);
 		}
+		std::cout << std::endl;
 		delete jason;
 		delete src;
 	}
 	{
-		std::cout << std::endl << "------- DEEP COPY COPY CONSTRUCOR -------" << std::endl;
 		IMateriaSource* src = new MateriaSource();
 		src->learnMateria(new Ice());
 		src->learnMateria(new Cure());
+		std::cout << std::endl;
 
 		Character* alfred = new Character("Alfred");
 		AMateria* tmp;
-		for (int i = 0; i < 4; i++)
+		std::cout << std::endl;
+		for (int i = 0; i < 5; i++)
 		{
 			tmp = src->createMateria("ice");
 			alfred->equip(tmp);
 		}
+		std::cout << std::endl;
 		Character bob = *alfred;
+		std::cout << std::endl;
 		std::cout << "Alfred storage: " << std::endl;
 		alfred->getStorageMemoryAddress();
+		std::cout << std::endl;
 		bob.use(1, bob);
+		std::cout << std::endl;
 		delete alfred;
+		std::cout << std::endl;
 		std::cout << "Bob storage: " << std::endl;
 		bob.getStorageMemoryAddress();
+		std::cout << std::endl;
 		bob.use(1, bob);
+		std::cout << std::endl;
 
 		delete src;
+		std::cout << std::endl;
+
 	}
 	{
 		std::cout << std::endl << "------- DEEP COPY ASSIGNMENT OPERATOR -------" << std::endl;
