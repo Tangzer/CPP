@@ -8,10 +8,6 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
 	:	AForm("Shrubbery", 145, 137),
 		_target(target) {}
 
-ShrubberyCreationForm::~ShrubberyCreationForm() {
-	std::cout << this->getName() << " Shrubbery deconstruction" << std::endl;
-}
-
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &copy)
 	:	AForm(copy.getName(), 145, 137),
 		_target(copy.getTarget()) {
@@ -24,11 +20,19 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 	return (*this);
 }
 
+ShrubberyCreationForm::~ShrubberyCreationForm() {
+	std::cout << this->getName() << " deconstruction" << std::endl;
+}
+
+/****************************/
+/* --- MEMBER FUNCTIONS --- */
+/****************************/
+
 std::string	ShrubberyCreationForm::getTarget() const {
 	return (_target);
 }
 
-void	ShrubberyCreationForm::execute(const Bureaucrat &executor) {
+void ShrubberyCreationForm::execute(const Bureaucrat &executor) const {
 	checkExecutePrivilege(executor);
 	std::string fileName = getTarget() + "_shrubbery.txt";
 	std::ofstream	oFile(fileName);

@@ -17,7 +17,7 @@ public:
 	~ShrubberyCreationForm();
 
 	std::string		getTarget() const;
-	void 			execute(const Bureaucrat &executor);
+	void 			execute(const Bureaucrat &executor) const;
 };
 
 #endif

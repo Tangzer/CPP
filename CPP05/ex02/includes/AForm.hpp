@@ -28,8 +28,8 @@ public:
 	void				checkGrade() const;
 	void				setSignature(bool sign);
 
-	void				checkExecutePrivilege(const Bureaucrat &executor);
-	virtual void		execute(const Bureaucrat &executor) = 0;	//pure virtual class --> no implementation in the base class, must be overridden by any concrete (non-abstract) derived class
+	void				checkExecutePrivilege(const Bureaucrat &executor) const;
+	virtual void		execute(const Bureaucrat &executor) const = 0;	//pure virtual class --> no implementation in the base class, must be overridden by any concrete (non-abstract) derived class
 
 	class GradeTooHighException : public std::exception {
 	public:

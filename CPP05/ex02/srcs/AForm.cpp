@@ -88,7 +88,7 @@ void AForm::setSignature(bool signature) {
 	_signed = signature;
 }
 
-void AForm::checkExecutePrivilege(const Bureaucrat &executor) {
+void AForm::checkExecutePrivilege(const Bureaucrat &executor) const {
 	if (this->getGradeToExecute() < executor.getGrade())
 		throw ExecuteGradeTooLow();
 	if (this->getSignature() == false)

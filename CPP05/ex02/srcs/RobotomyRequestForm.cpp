@@ -8,8 +8,6 @@ RobotomyRequestForm::RobotomyRequestForm(std::string target)
 	:	AForm("Robotomy", 72, 45),
 		_target(target) {}
 
-RobotomyRequestForm::~RobotomyRequestForm() {}
-
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy)
 	:	AForm(copy.getName(), copy.getGradeToSign(), copy.getGradeToExecute()),
 		_target(copy.getTarget()) {
@@ -22,14 +20,21 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &c
 	return (*this);
 }
 
+RobotomyRequestForm::~RobotomyRequestForm() {
+	std::cout << this->getName() << " deconstruction" << std::endl;
+}
+
+/****************************/
+/* --- MEMBER FUNCTIONS --- */
+/****************************/
+
 std::string	RobotomyRequestForm::getTarget() const {
 	return (_target);
 }
 
-void RobotomyRequestForm::execute(const Bureaucrat &executor) {
+void RobotomyRequestForm::execute(const Bureaucrat &executor) const {
 	this->checkExecutePrivilege(executor);
-	srand(time(NULL));
-	int nb = rand() % 2;
+	int nb = (rand() % 2);
 	std::cout << "nb : " << nb << std::endl;
 	std::cout << "Drilling noises..." << std::endl;
 	if (nb)
