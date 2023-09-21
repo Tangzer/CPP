@@ -7,7 +7,7 @@ Bureaucrat::Bureaucrat(std::string const name, int grade) : _name(name), _grade(
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &copy) : _name(copy._name), _grade(copy._grade) {
-	*this = other;
+	*this = copy;
 	checkGrade();
 }
 
