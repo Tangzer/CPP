@@ -4,6 +4,7 @@
 #include <string>
 #include <sstream>
 #include <iostream>
+#include <iomanip>
 
 # define CHAR			0
 # define INT			1
@@ -39,6 +40,8 @@ public:
 	bool			isInt(std::string &str, std::string &digits);
 	bool			isFloat(std::string &str, std::string &digits);
 	bool			isDouble(std::string &str, std::string &digits);
+	void			displayConversions(int precision);
+	int				getPrecision(std::string str) const;
 
 	class LiteralException : public std::exception {
 	public:

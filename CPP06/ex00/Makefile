@@ -23,6 +23,7 @@ SRCS_PATH		=	./srcs
 INCLUDE_PATH	=	./
 
 SRCS			=	ScalarConverter.cpp\
+					utils.cpp\
 
 MAIN			=	main.cpp
 

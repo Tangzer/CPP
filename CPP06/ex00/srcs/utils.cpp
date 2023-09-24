@@ -3,8 +3,8 @@
 bool	is_printable(double nb)
 {
 	if (nb < 32 || nb > 126)
-		return false;
-	return true;
+		return (false);
+	return (true);
 }
 
 void	ScalarConverter::displayConversions(int precision) {
