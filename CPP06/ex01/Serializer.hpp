@@ -6,8 +6,8 @@
 
 struct Data {
 	int			nb;
-	char		c;
-	float		flt;
+	float 		flt;
+	char 		c;
 };
 
 class Serializer {
@@ -16,6 +16,6 @@ public:
 	Data* 		deserialize(uintptr_t raw);
 };
 
-std::ostream &operator<<(std::ostream &os, Data myData);
+std::ostream &operator<<(std::ostream &os,const Data myData);
 
 #endif
