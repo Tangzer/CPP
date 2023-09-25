@@ -5,7 +5,7 @@ int main(int ac, char *av[])
 	if (ac == 2)
 	{
 		std::string convStr = av[1];
-		ScalarConverter	scalar;
+		static ScalarConverter	scalar;
 
 		try
 		{

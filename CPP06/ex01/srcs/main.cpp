@@ -8,6 +8,7 @@ int main() {
 	myData.c = 'H';
 	myData.flt = 10.15;
 	std::cout << myData;
+	std::cout << std::endl;
 
 	serializer.deserialize(serializer.serialize(&myData));
 
