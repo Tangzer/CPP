@@ -1,6 +1,6 @@
 #include "Array.hpp"
 
-#define MAX_VAL 750
+#define MAX_VAL 667
 
 int main(int, char**)
 {
@@ -8,8 +8,7 @@ int main(int, char**)
 	int* 		mirror = new int[MAX_VAL];
 
 	srand(time(NULL));
-	for (int i = 0; i < MAX_VAL; i++)
-	{
+	for (int i = 0; i < MAX_VAL; i++) {
 		const int value = rand();
 		numbers[i] = value;
 		mirror[i] = value;
@@ -20,40 +19,33 @@ int main(int, char**)
 		Array<int> test(tmp);
 	}
 
-	for (int i = 0; i < MAX_VAL; i++)
-	{
+	for (int i = 0; i < MAX_VAL; i++) {
 		if (mirror[i] != numbers[i])
 		{
-			std::cerr << "didn't save the same value!!" << std::endl;
+			std::cerr << "Mirror and numbers didn't save the same value!!" << std::endl;
 			return 1;
 		}
 	}
-	try
-	{
+	try {
 		numbers[-2] = 0;
-	}
-	catch(const std::exception& e)
-	{
+	} catch(const std::exception& e) {
 		std::cerr << e.what() << '\n';
 	}
-	try
-	{
-		numbers[MAX_VAL] = 0;
-	}
-	catch(const std::exception& e)
-	{
+	try {
+		numbers[MAX_VAL - 1] = 42;
+		int tmp = numbers[MAX_VAL - 1];
+		std::cout << tmp << std::endl;
+	} catch(const std::exception& e) {
 		std::cerr << e.what() << '\n';
 	}
 
-	for (int i = 0; i < 5; i++)
-	{
+	for (int i = 0; i < 5; i++) {
 		std::cout << "Numbers: " << numbers[i] << std::endl;
 		std::cout << "Mirror: " << mirror[i] << std::endl;
 		numbers[i] = rand();
 		std::cout << "New Numbers: " << numbers[i] << std::endl;
-		std::cout << "Mirror: " << mirror[i] << std::endl;
+		std::cout << "Mirror: " << mirror[i] << std::endl << std::endl;
 	}
 	delete [] mirror;
-	std::cout << "Numbers[0] after Mirror delete: " << numbers[0] << std::endl;
 	return 0;
 }

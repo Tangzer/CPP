@@ -17,11 +17,11 @@ NOVISU 	= 1 # 1 = no progress bar usefull when tty is not available
 
 FILE_EXTENSION	=	.cpp
 
-SRCS_PATH		=	./srcs
+SRCS_PATH		=	./
 
 INCLUDE_PATH	=	./
 
-SRCS			=	Array.cpp\
+SRCS			=
 
 MAIN			=	main.cpp
 
