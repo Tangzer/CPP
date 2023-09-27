@@ -3,8 +3,7 @@
 
 #include <iostream>
 #include <algorithm>
-#include <cstdlib>
-#include <vector>
+#include <list>
 
 class NotFoundException : public std::exception {
 	virtual const char *what() const throw() {
@@ -15,9 +14,9 @@ class NotFoundException : public std::exception {
 template<typename T>
 typename T::iterator	easyfind(T & data, int n);
 
-static std::ostream &operator<<(std::ostream &os, std::vector<int> const &v) {
+static std::ostream &operator<<(std::ostream &os, std::list<int> const &v) {
 	os << "[ ";
-	for ( std::vector<int>::const_iterator it = v.begin(); it != v.end();
+	for ( std::list<int>::const_iterator it = v.begin(); it != v.end();
 		  it++ ) {
 		if ( it != v.begin() ) { os << ", "; }
 		os << *it;
