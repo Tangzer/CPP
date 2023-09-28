@@ -16,10 +16,9 @@ typename T::iterator	easyfind(T & data, int n);
 
 static std::ostream &operator<<(std::ostream &os, std::list<int> const &v) {
 	os << "[ ";
-	for ( std::list<int>::const_iterator it = v.begin(); it != v.end();
-		  it++ ) {
+	for ( std::list<int>::const_iterator it = v.begin(); it != v.end(); it++ ) {
 		if ( it != v.begin() ) { os << ", "; }
-		os << *it;
+			os << *it;
 	}
 	os << " ]";
 	return (os);

@@ -6,7 +6,7 @@ struct F {
 
 int main() {
 	int const			x  = 3;
-	std::list<int>	v( 10 );
+	std::list<int>		v( 10 );
 
 	srand(time(0));
 	std::generate(v.begin(), v.end(), F());

@@ -2,7 +2,7 @@
 
 Span::Span() : _maxSize(0) {};
 
-Span::Span(const unsigned int N) : _maxSize(N) {};
+Span::Span(unsigned int N) : _maxSize(N) {};
 
 Span::Span(const Span & copy) {
 	*this = copy;
@@ -31,18 +31,22 @@ void	Span::addNumber(int n) {
 }
 
 unsigned int	Span::shortestSpan() {
-	long				ret;
+	long				span;
 	std::vector<int>	tmp;
 
-	if (_tab.size() < 2) {
+	if (_tab.size() < 2 || _maxSize < 2) {
 		throw NoSpanException();
 	}
-	ret = std::numeric_limits<long>::max();
+	span = std::numeric_limits<long>::max();
 	tmp = _tab;
+	std::vector<int>::const_iterator it = _tab.begin();
 	std::sort(tmp.begin(), tmp.end());
-	for (unsigned int i = 0; i + 1 < _maxSize ; i++)
-		ret = (std::min(ret, static_cast<long>((tmp[i + 1] - tmp[i]))));
-	return (ret);
+	for ( ; it + 1 != _tab.end() ; it++) {
+		if (abs(*it - *(it + 1)) < span) {
+			span = abs(*it - *(it + 1));
+		}
+	}
+	return (span);
 }
 
 unsigned int	Span::longestSpan() {
