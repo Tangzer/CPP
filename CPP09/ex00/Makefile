@@ -22,6 +22,7 @@ SRCS_PATH		=	./srcs
 INCLUDE_PATH	=	./
 
 SRCS			=	BitcoinExchange.cpp\
+					parsing.cpp\
 
 MAIN			=	main.cpp
 

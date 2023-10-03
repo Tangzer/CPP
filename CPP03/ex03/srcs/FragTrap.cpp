@@ -42,9 +42,17 @@ void FragTrap::highFivesGuys(void) {
 	std::cout << this->_name << " would like to high five you. If that's okay with you :)." << std::endl;
 }
 
-void	FragTrap::printTrap() {
+void FragTrap::printTrap() {
 	std::cout << "Name = " << this->_name << std::endl;
 	std::cout << "Hitpoints (Frag=100) = " << this->_hitPoints << std::endl;
 	std::cout << "Energypoints (Scav=50) = " << this->_energyPoints << std::endl;
 	std::cout << "AttackDamage (Frag=30) = " << this->_attackDamage << std::endl << std::endl;
+}
+
+unsigned int FragTrap::getHitPoints() {
+	return (this->_hitPoints);
+}
+
+unsigned int FragTrap::getAttackDamage() {
+	return (this->_attackDamage);
 }

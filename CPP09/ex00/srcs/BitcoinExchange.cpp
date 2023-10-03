@@ -1,16 +1,36 @@
 #include "BitcoinExchange.hpp"
 
+/****************************/
+/* ---- CONSTRUCTORS  ----- */
+/****************************/
+
+BitcoinExchange::BitcoinExchange() {}
+
+BitcoinExchange::BitcoinExchange(const BitcoinExchange &copy) : _db(copy._db) {}
+
+BitcoinExchange & BitcoinExchange::operator=(const BitcoinExchange &copy) {
+	if (this != &copy)
+		_db = copy._db;
+	return (*this);
+}
+
+BitcoinExchange::~BitcoinExchange() {}
+
+/****************************/
+/* --- MEMBER FUNCTIONS --- */
+/****************************/
+
 static bool printError(const std::string &line) {
 	std::cerr << "Error: bad input => " << line << '\n';
 	return (false);
 }
 
-static bool	isValidDate(int year, int month, int day) {
+static bool isValidDate(int year, int month, int day) {
 	if (month == 4 || month == 6 || month == 9 || month == 11) {
 		if (day > 30)
 			return (false);
 	}
-	//Vérifier années bisextiles
+		//Vérifier années bisextiles
 	else if (month == 2) {
 		if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) {
 			if (day > 29) {
@@ -68,7 +88,7 @@ static bool checkDate(std::string &date) {
 	return (true);
 }
 
-static bool parseLine(std::ifstream &in, const char *delims, std::string &date, float &value) {
+bool BitcoinExchange::parseLine(std::ifstream &in, const char *delims, bool checkValue, std::string &date, float &value) {
 	std::string		line;
 	size_t 			i;
 	const char		*valuePtr;
@@ -88,11 +108,37 @@ static bool parseLine(std::ifstream &in, const char *delims, std::string &date, 
 	i = line.find_first_not_of(delims, i);
 	valuePtr = line.c_str() + i;
 	value = std::strtof(valuePtr, &endPtr);
-	if (value < 0)
-		return (printError("not a positive number"));
-	if (value > 1000)
-		return (printError("number is too high"));
+	if (value < 0 || (checkValue && value > 1000)) {
+		if (value < 0)
+			return (printError("not a positive number"));
+		else if (value > 1000)
+			return (printError("number is too high"));
+		else
+			return (printError(std::string(valuePtr)));
+	}
 	return (true);
+}
+
+void	BitcoinExchange::createDB(const char *db) {
+	std::ifstream	inputDB;
+	std::string		header;
+	std::string		date;
+	float			value;
+
+	inputDB.exceptions(std::ifstream::badbit);
+	inputDB.open(db);
+	if (inputDB.fail())
+		throw (std::ios_base::failure("Failed to open file"));
+
+	std::getline(inputDB, header);
+	if (header != "date,exchange_rate")
+		std::cerr << "Invalid file header..." << std::endl;
+
+	while (!inputDB.eof()) {
+		if (!parseLine(inputDB, ",", false, date, value))
+			continue ;
+		_db.insert(std::make_pair(date, value));
+	}
 }
 
 void	BitcoinExchange::applyExchange(const char *file) {
@@ -104,14 +150,14 @@ void	BitcoinExchange::applyExchange(const char *file) {
 	input.exceptions(std::ifstream::badbit);
 	input.open(file);
 	if (input.fail())
-		throw (std::ifstream::failure("Error: failed to open file."));
-
+		throw (std::ios_base::failure("Error: failed to open file."));
 	std::getline(input, header);
 	if (header != "date | value")
 		throw (std::runtime_error("wrong header."));
 	while (!input.eof()) {
-		if (!parseLine(input, "|", date, value))
+		if (!parseLine(input, "|", true, date, value))
 			continue ;
+//		_db::iterator rate = _db.upper_bound(date);
 	}
 	input.close();
 }

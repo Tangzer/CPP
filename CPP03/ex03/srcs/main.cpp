@@ -4,9 +4,9 @@ int main(void) {
 	{
 		std::cout << "--------------" << std::endl;
 		std::cout << "--- ATTACK ---" << std::endl;
-		std::cout << "--------------" << std::endl << std::endl;
+		std::cout << "--------------" << std::endl;
 
-		DiamondTrap trap("DiamondTrappy");
+		DiamondTrap trap("Paulineee");
 		std::cout << std::endl;
 //		DiamondTrap copy = trap;
 //		std::cout << std::endl;

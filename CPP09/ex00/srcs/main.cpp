@@ -7,6 +7,7 @@ int	main(int ac, char **av) {
 	}
 	try {
 		BitcoinExchange btc;
+		btc.createDB("data.csv");
 		btc.applyExchange(av[1]);
 	} catch (std::ios_base::failure &e) {
 		std::cerr << "I/O Error: " << e.what() << std::endl;
