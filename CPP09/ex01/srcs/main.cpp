@@ -1,14 +1,23 @@
+#include "RPN.hpp"
+
+int	RPN::printError(const std::string str) {
+	std::cerr << "Error: " << str << std::endl;
+	return (1);
+}
+
+static int	printError(const std::string str) {
+	std::cerr << "Error: " << str << std::endl;
+	return (1);
+}
+
 int	main(int ac, char **av) {
-	RPN	rpn;
-
-	if (ac != 2) {
-		std::cerr << "Error: wrong number of arguments\n";
-		return (1);
-	}
-	if (std::strlen(argv[1]) <= 0) {
-		std::cerr << "Error: empty string\n";
-		return (1);
-	}
-
+	if (ac != 2)
+		return (printError("wrong number of arguments."));
+	if (std::strlen(av[1]) <= 0)
+		return (printError("empty string."));
+	RPN	rpn(av[1]);
+	if (rpn.getArgStatus() == false)
+		return (printError("bad input."));
+	rpn.reversePolishNotation();
 	return (0);
 }

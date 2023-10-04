@@ -17,12 +17,13 @@ public:
 	RPN &operator=(const RPN &copy);
 	~RPN();
 
-	std::stack<long int>	getStack() const {return (_stack)};
-	std::string 			getArg() const {return (_arg)};
-	bool		 			getArgStatus() const {return (_argStatus)};
+	std::stack<long int>	getStack() const {return (_stack);}
+	std::string 			getArg() const {return (_arg);}
+	bool		 			getArgStatus() const {return (_argStatus);}
+	int						printError(const std::string str);
 
-	int						Reverse_Polish_Notation();
-	bool					Parse_Reverse_Polish_Notation();
+	int						reversePolishNotation();
+	bool					parseReversePolishNotation();
 };
 
 #endif

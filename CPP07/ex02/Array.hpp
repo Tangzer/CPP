@@ -6,9 +6,8 @@
 template <typename T>
 class Array {
 private:
-	T* _tab;
+	T* 			_tab;
 	unsigned int _size;
-
 public:
 	Array() : _tab(NULL), _size(0) {
 		std::cout << "Default Array Constructor called\n";
