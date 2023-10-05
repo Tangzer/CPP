@@ -39,7 +39,7 @@ static bool checkDate(std::string &date) {
 	count = 0;
 	len = date.length();
 	if (len != 10)
-		return (printError(date));
+		return (printError("input.txt"));
 	for (int i = 0; i < (int)date.length(); i++) {
 		if (i != 0 && date[i] == '-')
 			count++;
@@ -83,7 +83,7 @@ bool BitcoinExchange::parseLine(std::ifstream &in, const char *delims, bool chec
 		return (printError(line));
 	date = line.substr(0, i);
 	if (!checkDate(date))
-		return (printError(date));
+		return (false);
 	//find value
 	i = line.find_first_not_of(delims, i);
 	valuePtr = line.c_str() + i;

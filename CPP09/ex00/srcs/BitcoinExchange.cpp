@@ -56,7 +56,7 @@ void	BitcoinExchange::applyExchange(const char *file) {
 	if (header != "date | value")
 		throw (std::runtime_error("wrong header."));
 	while (!input.eof()) {
-		if (!parseLine(input, "|", true, date, value))
+		if (!parseLine(input, " |", true, date, value))
 			continue ;
 		_mapIterator rate = findDateMap(date);
 		if (rate == _db.end()) {
