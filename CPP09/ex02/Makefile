@@ -4,7 +4,7 @@
 
 NAME	= PmergeMe
 CC 		= c++
-CFLAGS	= -Wall -Wextra -Werror -std=c++98
+CFLAGS	= -Wall -Wextra -Werror -std=c++98 -g
 DFLAGS	= -MMD -MF $(@:.o=.d)
 AUTHOR	= tverdood
 DATE	= 28/09/2023

@@ -2,6 +2,8 @@
 #define PMERGEME_HPP
 
 #include <iostream>
+#include <string>
+#include <sstream>
 #include <list>
 #include <vector>
 #include <deque>
@@ -12,20 +14,22 @@ double	timing(struct timeval begin, struct timeval end);
 
 class	InvalidValueError : public std::exception {
 	public:
-		const char* what() const throw();
+		const char* what() const throw() {
+			return ("Invalid input.");
+		}
 };
 
 template<typename T>
 void	printContainer(T &container);
 
-//template<typename Iterator>
-//void	printSpan(Iterator begin, Iterator end);
+template<typename Iterator>
+void	printSpan(Iterator begin, Iterator end);
 
 template<typename T, typename Iterator>
-void	merge(T &container, Iterator begin, Iterator mid, Iterator end);
+void	merge(Iterator begin, Iterator mid, Iterator end);
 
 template<typename T, typename Iterator>
-void	merge(T &container, Iterator begin, Iterator end);
+void	mergeSort(Iterator begin, Iterator end);
 
 template<typename Iterator>
 void	paireUp(Iterator begin, Iterator end);
@@ -40,7 +44,7 @@ template<typename T>
 void	insert(T &main, T &pend);
 
 template<typename T>
-T mergeInsert(T &cont);
+T 		mergeInsert(T &container);
 
 #include "PmergeMe.tpp"
 
