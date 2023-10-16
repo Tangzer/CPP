@@ -24,9 +24,7 @@ int	main(int ac, char **av) {
 	std::cout << "Before: ";
 	printContainer(vec);
 	gettimeofday(&deqBegin, 0);
-	std::cout << "2 \n";
 	deqSorted =  mergeInsert(deq);
-	std::cout << "3 \n";
 	gettimeofday(&deqEnd, 0);
 
 	gettimeofday(&vecBegin, 0);

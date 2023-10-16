@@ -118,7 +118,6 @@ void	insert(T &main, T &pend) {
 
 	typename T::iterator itPendStart = pend.begin();
 	typename T::iterator itPendEnd = pend.begin();
-
 	typename T::iterator itInsertPos = main.begin();
 
 	unsigned int insertedAmount = 0;
