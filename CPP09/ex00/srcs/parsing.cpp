@@ -63,7 +63,7 @@ static bool checkDate(std::string &date) {
 	intDay = atoi(day.c_str());
 	if (intDay < 1 || intDay > 31)
 		return (printError(date));
-	if (!isValidDate(intYear, intMonth, intDay))
+	if (isValidDate(intYear, intMonth, intDay) == false)
 		return (printError(date));
 	return (true);
 }

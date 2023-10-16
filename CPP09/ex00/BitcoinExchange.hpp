@@ -19,10 +19,6 @@ public:
 	bool 			parseLine(std::ifstream &in, const char *delims, bool checkValue, std::string &date, float &value);
 	void			createDB(const char *db);
 	void			applyExchange(const char *file);
-
-	_mapIterator	findDateMap(const std::string &date) {
-		return _db.lower_bound(date);
-	}
 };
 
 #endif
